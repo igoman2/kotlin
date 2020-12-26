@@ -24,7 +24,7 @@
         android:layout_centerHorizontal="true"
         android:text="라이프사이클 메소드"
         android:visibility="invisible"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:textStyle="bold"/>
 
 
