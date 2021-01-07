@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 class MainActivity2 : AppCompatActivity() {
+
+    lateinit var mediaPlayer : MediaPlayer
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
-        val mediaPlayer = MediaPlayer.create(this, R.raw.sound2)
+         mediaPlayer = MediaPlayer.create(this, R.raw.sound2)
         println("hihi")
         mediaPlayer.start()
         print("cccc")
@@ -16,18 +18,21 @@ class MainActivity2 : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        val mediaPlayer = MediaPlayer.create(this, R.raw.sound2)
         println("hihi")
         mediaPlayer.start()
         print("cccc")
     }
 
-    override fun onRestart() {
-        super.onRestart()
-        val mediaPlayer = MediaPlayer.create(this, R.raw.sound2)
-        println("hihi")
-        mediaPlayer.start()
-        print("cccc")
+//    override fun onRestart() {
+//        super.onRestart()
+//        println("hihi")
+//        mediaPlayer.start()
+//        print("cccc")
+//    }
+
+    override fun onPause() {
+        super.onPause()
+        mediaPlayer.release()
     }
 
 

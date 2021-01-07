@@ -1,6 +1,7 @@
 package com.Han.HanNewYear
 
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -25,7 +26,6 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "MainActivity - onCreate() called")
         val intent : Intent = Intent(this, MainActivity2::class.java)
 
-
         timer(period = 1000, initialDelay = 0){
             runOnUiThread {
 
@@ -34,8 +34,9 @@ class MainActivity : AppCompatActivity() {
                 textView.setText(dateTime)
                 count++
 
-                if(count == 6)
+                if(dateTime.equals("00:00:00")) {
                     startActivity(intent)
+                }
 
                 buttonView2.setOnClickListener {
                     startActivity(intent)
